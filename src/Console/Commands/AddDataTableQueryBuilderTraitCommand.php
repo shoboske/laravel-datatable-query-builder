@@ -6,7 +6,6 @@ use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Schema;
 use ReflectionClass;
-use Shoboske\DataTableQueryBuilder\Traits\DataTableQueryBuilderTrait;
 
 class AddDataTableQueryBuilderTraitCommand extends Command
 {
