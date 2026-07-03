@@ -11,7 +11,7 @@ class GetBelongsToManyRelationships
             $belongsToMany = array_keys($declaredRelationship['belongsToMany']);
 
             foreach ($belongsToMany as $key => $item) {
-                if (! is_numeric($key) && in_array($key, $relationships)) {
+                if (! is_numeric($key) && \in_array($key, $relationships)) {
                     $with[$key] = $item;
                 }
             }

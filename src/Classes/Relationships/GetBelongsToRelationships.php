@@ -11,7 +11,7 @@ class GetBelongsToRelationships
             $belongsTo = array_keys($declaredRelationship['belongsTo']);
 
             foreach ($belongsTo as $key => $item) {
-                if (in_array($item, $relationships)) {
+                if (\in_array($item, $relationships)) {
                     $with[] = $item;
                 }
             }

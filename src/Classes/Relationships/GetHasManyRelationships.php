@@ -11,7 +11,7 @@ class GetHasManyRelationships
             $hasMany = array_keys($declaredRelationship['hasMany']);
 
             foreach ($hasMany as $key => $item) {
-                if (in_array($item, $relationships)) {
+                if (\in_array($item, $relationships)) {
                     $with[] = $item;
                 }
             }

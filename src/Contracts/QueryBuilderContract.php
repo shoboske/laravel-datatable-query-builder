@@ -2,13 +2,42 @@
 
 namespace Shoboske\DataTableQueryBuilder\Contracts;
 
+use Illuminate\Database\Eloquent\Builder;
+
 interface QueryBuilderContract
 {
-    public function selectData();
+    /**
+     * Build the base query.
+     *
+     * @return mixed
+     */
+    public function selectData(): QueryBuilderContract;
 
-    public function orderBy($columnName, $direction = 'asc');
+    /**
+     * Apply an ORDER BY clause.
+     *
+     * @param  'asc'|'desc'  $sortDirection
+     * @return mixed
+     */
+    public function orderBy(?string $columnName, string $sortDirection = 'asc'): QueryBuilderContract;
 
-    public function addRelationships($declaredRelationship, $sortDirection);
+    /**
+     * Apply relationship joins/eager loads required for sorting.
+     *
+     * @param  'asc'|'desc'  $sortDirection
+     * @return mixed
+     */
+    public function addRelationships(string $declaredRelationship, string $sortDirection): QueryBuilderContract;
 
-    public function filter($searchValue);
+    /**
+     * Apply search/filter constraints to the query.
+     *
+     * @return mixed
+     */
+    public function filter(?string $searchValue): QueryBuilderContract;
+
+    /**
+     * Get the underlying query builder instance.
+     */
+    public function query(): Builder;
 }

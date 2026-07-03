@@ -11,7 +11,7 @@ class GetHasOneRelationships
             $hasOne = array_keys($declaredRelationship['hasOne']);
 
             foreach ($hasOne as $key => $item) {
-                if (in_array($item, $relationships)) {
+                if (\in_array($item, $relationships)) {
                     $with[] = $item;
                 }
             }
