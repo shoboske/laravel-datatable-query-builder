@@ -33,11 +33,5 @@ class TestCase extends Orchestra
             'prefix' => '',
             'foreign_key_constraints' => true,
         ]);
-
-        /*
-         foreach (\Illuminate\Support\Facades\File::allFiles(__DIR__ . '/../database/migrations') as $migration) {
-            (include $migration->getRealPath())->up();
-         }
-         */
     }
 }
