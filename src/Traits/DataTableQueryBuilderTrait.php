@@ -11,6 +11,20 @@ use Shoboske\DataTableQueryBuilder\Classes\QueryBuilder;
 trait DataTableQueryBuilderTrait
 {
     /**
+     * Get the columns available for DataTable queries.
+     *
+     * @return array<string, array<string, mixed>>
+     */
+    abstract protected function getDataTableColumns(): array;
+
+    /**
+     * Get the relationships available for DataTable queries.
+     *
+     * @return array<string, mixed>
+     */
+    abstract protected function getDataTableRelationships(): array;
+
+    /**
      * Build an Eloquent query with sorting, filtering, and relationships
      * for DataTable responses.
      *
@@ -28,8 +42,8 @@ trait DataTableQueryBuilderTrait
         $queryBuilder = new QueryBuilder(
             $this,
             $query,
-            $this->dataTableColumns,
-            $this->dataTableRelationships
+            $this->getDataTableColumns(),
+            $this->getDataTableRelationships()
         );
 
         return $queryBuilder->selectData()
