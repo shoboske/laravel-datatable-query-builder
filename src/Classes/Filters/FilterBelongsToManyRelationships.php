@@ -48,6 +48,6 @@ class FilterBelongsToManyRelationships
             }
         }
 
-        return  $query;
+        return $query;
     }
 }

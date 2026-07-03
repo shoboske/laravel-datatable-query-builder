@@ -1,4 +1,5 @@
 <?php
+
 namespace Shoboske\DataTableQueryBuilder\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
@@ -30,4 +31,3 @@ trait DataTableQueryTrait
         return [$dataKey => $data, $countKey => $count];
     }
 }
-

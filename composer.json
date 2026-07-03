@@ -45,6 +45,9 @@
         }
     },
     "scripts": {
+        "post-install-cmd": [
+            "@php artisan vendor:publish --tag=\"data-table-query-builder-config\""
+        ],
         "post-autoload-dump": "@composer run prepare",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "analyse": "vendor/bin/phpstan analyse",

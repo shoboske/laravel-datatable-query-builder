@@ -18,22 +18,45 @@ composer require shoboske/laravel-data-table-query-builder
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-data-table-query-builder-config"
+php artisan vendor:publish --tag="data-table-query-builder-config"
 ```
 
 This is the contents of the published config file:
 
 ```php
 return [
-	'like_term' => 'like',
+	// SQL operator used when filtering searchable columns.
+    'like_term' => 'like',
 
-	'default_sort_direction' => 'asc',
+    // Default sort direction when no explicit direction is provided.
+    'default_sort_direction' => 'asc',
 
-	'models' => [
-		'search_term' => 'searchable',
-		'alias' => 'alias',
-		'default_sort_column_name' => 'id',
-	],
+    'models' => [
+        // Attribute name used to mark columns as searchable in a model.
+        'search_term' => 'searchable',
+        // Attribute name used when a column should be selected under an alias.
+        'alias' => 'alias',
+        // Default column used when no sort column is supplied.
+        'default_sort_column_name' => 'id',
+    ],
+    'query_params' => [
+        // Query parameter that controls how many records are returned.
+        'take' => 'take',
+        // Query parameter that controls how many records are skipped.
+        'skip' => 'skip',
+        // Query parameter that contains the search term.
+        'search' => 'search',
+        // Query parameter that contains the column to sort by.
+        'sort' => 'sort',
+        // Query parameter that contains the sort direction.
+        'direction' => 'direction',
+    ],
+    'response_keys' => [
+        // Response key that contains the paginated data.
+        'data' => 'data',
+        // Response key that contains the total result count.
+        'count' => 'count',
+    ],
 ];
 ```
 
