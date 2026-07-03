@@ -34,7 +34,7 @@ it('adds the trait and columns method from fillable attributes', function () {
         expect($updatedContents)->toContain('protected function getDataTableColumns(): array');
         expect($updatedContents)->toContain("'name' => [");
         expect($updatedContents)->toContain("'email' => [");
-        expect($updatedContents)->toContain("config('data-table-query-builder.models.search_term') => true,");
+        expect($updatedContents)->toContain("'searchable' => true,");
         expect($updatedContents)->toContain('protected function getDataTableRelationships(): array');
     });
 });

@@ -47,5 +47,7 @@ class FilterBelongsToManyRelationships
                 });
             }
         }
+
+        return  $query;
     }
 }

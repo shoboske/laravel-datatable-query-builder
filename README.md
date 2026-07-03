@@ -30,7 +30,7 @@ return [
 	'default_sort_direction' => 'asc',
 
 	'models' => [
-		'search_term' => 'search_term',
+		'search_term' => 'searchable',
 		'alias' => 'alias',
 		'default_sort_column_name' => 'id',
 	],
@@ -53,17 +53,29 @@ class User extends Model
 	{
 		return [
 			'name' => [
-				config('data-table-query-builder.models.search_term') => true,
+				'searchable' => true,
 			],
 			'email' => [
-				config('data-table-query-builder.models.search_term') => true,
+				'searchable' => true,
 			],
 		];
 	}
 
 	protected function getDataTableRelationships(): array
 	{
-		return [];
+		return [
+            "belongsTo" => [
+                "role" => [
+                    "model" => 'role_id'
+                    'columns' => [
+                        'role' => [
+                            'searchable' => true,
+                            'orderable' => true
+                        ]
+                    ]
+                ]
+            ]
+        ];
 	}
 }
 ```

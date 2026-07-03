@@ -11,7 +11,7 @@ class AddDataTableQueryBuilderTraitCommand extends Command
 {
     protected $signature = 'data-table:add-trait {model? : The model class to update}';
 
-    protected $description = 'Add the DataTableQueryBuilder trait and generated datatable methods to a model';
+    protected $description = 'Add the DataTableQuery trait and generated datatable methods to a model';
 
     public function handle(): int
     {
@@ -131,7 +131,7 @@ class AddDataTableQueryBuilderTraitCommand extends Command
 
     protected function ensureTraitImport(string $contents): string
     {
-        $import = 'use Shoboske\\DataTableQueryBuilder\\Traits\\DataTableQueryBuilderTrait;';
+        $import = 'use Shoboske\\DataTableQueryBuilder\\Traits\\DataTableQueryTrait;';
 
         if (str_contains($contents, $import)) {
             return $contents;
@@ -204,7 +204,7 @@ class AddDataTableQueryBuilderTraitCommand extends Command
             $column = (string) $column;
 
             $columnsBlock[] = "        '{$column}' => [";
-            $columnsBlock[] = "            config('data-table-query-builder.models.search_term') => true,";
+            $columnsBlock[] = "            'searchable' => true,";
             $columnsBlock[] = '        ],';
         }
 
