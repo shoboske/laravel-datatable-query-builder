@@ -5,7 +5,7 @@ namespace Shoboske\DataTableQueryBuilder\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Shoboske\DataTableQueryBuilder\DataTableQueryBuilder
+ * @see \Shoboske\DataTableQueryBuilder\\DataTableQueryBuilder
  */
 class DataTableQueryBuilder extends Facade
 {

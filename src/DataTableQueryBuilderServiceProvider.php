@@ -4,7 +4,6 @@ namespace Shoboske\DataTableQueryBuilder;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Shoboske\DataTableQueryBuilder\Commands\DataTableQueryBuilderCommand;
 
 class DataTableQueryBuilderServiceProvider extends PackageServiceProvider
 {
