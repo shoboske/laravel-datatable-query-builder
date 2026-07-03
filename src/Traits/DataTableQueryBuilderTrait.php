@@ -34,10 +34,10 @@ trait DataTableQueryBuilderTrait
      */
     public function scopeEloquentQuery(
         Builder $query,
-        string $columnName = 'id',
-        string $sortDirection = 'asc',
-        string $filter = '',
-        array $relationships = []
+        ?string $columnName = 'id',
+        ?string $sortDirection = 'asc',
+        ?string $filter = '',
+        ?array $relationships = []
     ) {
         $queryBuilder = new QueryBuilder(
             $this,

@@ -42,6 +42,8 @@ return [
     'query_params' => [
         // Query parameter that controls how many records are returned.
         'take' => 'take',
+        // Default number of records to return when the take parameter is missing.
+        'default_take' => 10,
         // Query parameter that controls how many records are skipped.
         'skip' => 'skip',
         // Query parameter that contains the search term.

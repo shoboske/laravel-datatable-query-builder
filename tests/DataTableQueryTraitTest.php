@@ -16,6 +16,7 @@ beforeEach(function (): void {
 
     config()->set('data-table-query-builder.query_params', [
         'take' => 'limit',
+        'default_take' => 1,
         'skip' => 'offset',
         'search' => 'q',
         'sort' => 'order_by',
@@ -28,7 +29,6 @@ beforeEach(function (): void {
     ]);
 
     request()->replace([
-        'limit' => 1,
         'offset' => 0,
         'q' => 'Alpha',
         'order_by' => 'name',
