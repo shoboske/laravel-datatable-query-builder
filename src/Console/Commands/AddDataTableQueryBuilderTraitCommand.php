@@ -10,7 +10,7 @@ use Shoboske\DataTableQueryBuilder\Traits\DataTableQueryBuilderTrait;
 
 class AddDataTableQueryBuilderTraitCommand extends Command
 {
-    protected $signature = 'datatable:add-trait {model? : The model class to update}';
+    protected $signature = 'data-table:add-trait {model? : The model class to update}';
 
     protected $description = 'Add the DataTableQueryBuilder trait and generated datatable methods to a model';
 

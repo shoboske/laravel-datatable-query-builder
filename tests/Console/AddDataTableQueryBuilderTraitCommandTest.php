@@ -23,7 +23,7 @@ it('adds the trait and columns method from fillable attributes', function () {
     expect($originalContents)->toBeString();
 
     restoreModelFile($filePath, $originalContents, function () use ($filePath) {
-        $this->artisan('datatable:add-trait', [
+        $this->artisan('data-table:add-trait', [
             'model' => CommandFillableModel::class,
         ])->assertExitCode(0);
 
@@ -57,7 +57,7 @@ it('falls back to schema columns when fillable is empty', function () {
     expect($originalContents)->toBeString();
 
     restoreModelFile($filePath, $originalContents, function () use ($filePath) {
-        $this->artisan('datatable:add-trait', [
+        $this->artisan('data-table:add-trait', [
             'model' => CommandSchemaFallbackModel::class,
         ])->assertExitCode(0);
 
@@ -81,11 +81,11 @@ it('does not duplicate the trait or methods when run twice', function () {
     expect($originalContents)->toBeString();
 
     restoreModelFile($filePath, $originalContents, function () use ($filePath) {
-        $this->artisan('datatable:add-trait', [
+        $this->artisan('data-table:add-trait', [
             'model' => CommandExistingTraitModel::class,
         ])->assertExitCode(0);
 
-        $this->artisan('datatable:add-trait', [
+        $this->artisan('data-table:add-trait', [
             'model' => CommandExistingTraitModel::class,
         ])->assertExitCode(0);
 
