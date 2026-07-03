@@ -2,7 +2,7 @@
 
 namespace Shoboske\DataTableQueryBuilder;
 
-use Shoboske\DataTableQueryBuilder\Console\Commands\AddDataTableQueryBuilderTraitCommand;
+use Shoboske\DataTableQueryBuilder\Console\Commands\AddDataTableQueryTraitCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -19,7 +19,7 @@ class DataTableQueryBuilderServiceProvider extends PackageServiceProvider
             ->name('laravel-data-table-query-builder')
             ->hasConfigFile()
             ->hasCommands([
-                AddDataTableQueryBuilderTraitCommand::class,
+                AddDataTableQueryTraitCommand::class,
             ]);
     }
 }

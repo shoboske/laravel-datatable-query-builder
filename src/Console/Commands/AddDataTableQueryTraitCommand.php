@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Schema;
 use ReflectionClass;
 
-class AddDataTableQueryBuilderTraitCommand extends Command
+class AddDataTableQueryTraitCommand extends Command
 {
     protected $signature = 'data-table:add-trait {model? : The model class to update}';
 
@@ -157,7 +157,7 @@ class AddDataTableQueryBuilderTraitCommand extends Command
 
     protected function ensureTraitUsage(string $contents): string
     {
-        if (preg_match('/^\s*use\s+DataTableQueryBuilderTrait;\s*$/m', $contents) === 1) {
+        if (preg_match('/^\s*use\s+DataTableQueryTrait;\s*$/m', $contents) === 1) {
             return $contents;
         }
 
@@ -167,7 +167,7 @@ class AddDataTableQueryBuilderTraitCommand extends Command
 
         $insertionPosition = $match[0][1] + strlen($match[0][0]);
 
-        return substr($contents, 0, $insertionPosition)."\n    use DataTableQueryBuilderTrait;".substr($contents, $insertionPosition);
+        return substr($contents, 0, $insertionPosition)."\n    use DataTableQueryTrait;".substr($contents, $insertionPosition);
     }
 
     protected function ensureGeneratedMethods(string $contents, array $columns): string
